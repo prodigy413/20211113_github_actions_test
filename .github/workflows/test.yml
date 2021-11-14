@@ -14,7 +14,7 @@ jobs:
       - name: Hello jobs
         run: |
           sleep 20
-          echo "Hello ${{ github.event.inputs.name }}!"
+          echo "Helloxxxxxxx ${{ github.event.inputs.name }}!"
       - name: Wait jobs
         run: |
           sleep 15

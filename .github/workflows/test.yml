@@ -18,4 +18,4 @@ jobs:
       - name: Wait jobs
         run: |
           sleep 15
-          echoxxxxxx "_Wait completed"
+          echo "_Wait completed"

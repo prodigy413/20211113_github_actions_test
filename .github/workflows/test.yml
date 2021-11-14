@@ -11,6 +11,11 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          sleep 30
+      - name: Hello jobs
+        run: |
+          sleep 20
           echo "Hello ${{ github.event.inputs.name }}!"
+      - name: Wait jobs
+        run: |
+          sleep 15
+          echo "_Wait completed"

@@ -1,6 +1,8 @@
 name: obi
 on:
   workflow_dispatch:
+    branches:
+      - test
 
 jobs:
   say_hello:

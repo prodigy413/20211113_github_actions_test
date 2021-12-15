@@ -17,4 +17,4 @@ jobs:
       - name: Hello jobs
         run: |
           echo "this is test"
-          cat text.txt
+          cat test.txt

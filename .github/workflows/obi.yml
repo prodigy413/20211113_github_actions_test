@@ -1,6 +1,9 @@
 name: obi
 on:
-  workflow_dispatch:
+#  workflow_dispatch:
+#    branches:
+#      - test
+  push:
     branches:
       - test
 

@@ -6,7 +6,11 @@ on:
 #  push:
 #    branches:
 #      - test
-
+    inputs:
+      filename:
+        description: 'env file name'
+        required: true
+        default: ''
 jobs:
   say_hello:
     runs-on: ubuntu-latest
@@ -18,3 +22,5 @@ jobs:
         run: |
           echo "this is main"
           cat test.txt
+          touch env.${{ github.event.inputs.filename }}.txt
+          ls -l

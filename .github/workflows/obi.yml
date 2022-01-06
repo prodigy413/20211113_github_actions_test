@@ -14,6 +14,9 @@ on:
         description: 'env file name'
         required: true
 
+env:
+  TEST01: ${{ github.event.inputs.filename }}
+  
 jobs:
   say_hello:
     runs-on: ubuntu-latest
@@ -27,6 +30,7 @@ jobs:
           test_02: "test_02"
         run: |
           echo "this is main"
+          echo $TEST01
           cat test.txt
           touch env.${{ github.event.inputs.filename }}.txt
           ls -l

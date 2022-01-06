@@ -10,7 +10,10 @@ on:
       filename:
         description: 'env file name'
         required: true
-        default: ''
+      number:
+        description: 'env file name'
+        required: true
+
 jobs:
   say_hello:
     runs-on: ubuntu-latest
@@ -19,8 +22,16 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Hello jobs
+        env:
+          test_01: "test_01"
+          test_02: "test_02"
         run: |
           echo "this is main"
           cat test.txt
           touch env.${{ github.event.inputs.filename }}.txt
           ls -l
+          if [ ${{ github.event.inputs.number }} -eq 1 ]; then
+            echo $test_01
+          elif [ ${{ github.event.inputs.number }} -eq 2 ]; then
+            echo $test_02
+          fi

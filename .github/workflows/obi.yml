@@ -36,8 +36,8 @@ jobs:
           cat test.txt
           touch env.${{ github.event.inputs.filename }}.txt
           ls -l
-          if [ $FILENAME = "dev" ] && [ $NUMBER -eq 1 ]; then
+          if [ "$FILENAME" = "dev" ] && [ "$NUMBER" = 1 ]; then
             echo $test_01
-          elif [ $FILENAME = "prod" ] && [ $NUMBER -eq 2 ]; then
+          elif [ "$FILENAME" = "prod" ] && [ "$NUMBER" = 2 ]; then
             echo $test_02
           fi
